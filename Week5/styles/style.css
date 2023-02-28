@@ -1,0 +1,106 @@
+@import url(//db.onlinewebfonts.com/c/1e44faec07b8b81f60a3215d76bd0086?family=Irvin);
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+
+body {
+  margin: 40px;
+  font-family: "EB Garamond", serif;
+}
+
+header h1,
+header h2 {
+  font-family: Irvin, serif;
+}
+
+header h2 {
+  color: red;
+  font-size: 0.7em;
+  /* 1 em means the default font size of the page - 16px.. 70% of 16px..*/
+}
+
+header h1 {
+  font-size: 2.4em;
+  font-weight: 100;
+}
+
+header,
+main {
+  max-width: 500px;
+}
+
+#author {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+figcaption {
+  font-style: italic;
+  color: gray;
+  font-size: 0.9em;
+}
+
+#credit {
+  font-style: normal;
+  font-size: 0.8em;
+}
+
+#credit a {
+  text-decoration: none;
+  color: gray;
+}
+
+#credit a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+figure img {
+  width: 100%;
+}
+
+#social {
+  display: none;
+}
+
+.firstletter {
+  font-size: 5em;
+  line-height: 60px;
+  float: left;
+  padding-right: 8px;
+}
+
+main {
+  font-size: 1.1em;
+  line-height: 1.7;
+}
+
+footer {
+  text-align: center;
+}
+@media screen and (max-width: 700px) {
+  body {
+    margin: 10px;
+    background-color: rgb(196, 196, 184);
+  }
+  #social {
+    display: block;
+  }
+
+  header {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    margin: 0px;
+    background-color: bisque;
+  }
+  #social {
+    display: block;
+  }
+
+  header {
+    text-align: center;
+  }
+}
+
+/* Responsive website... that responds to different screen sizes or media... */

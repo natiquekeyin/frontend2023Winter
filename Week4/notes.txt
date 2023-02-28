@@ -1,0 +1,107 @@
+Old days, HTML also had some styling elements that we used to give some styles to the document
+<font color="green"> Hello world</font>
+    <p align="center">Hello world</p>
+    <!-- anything in red color in HTML means obsolete... -->
+    AN ADVICE.. NEVER USE RED ELEMENTS OR ATTRIBUTES...
+
+HTML5: SEPARATING THE CONCERNS
+    1.STRUCTURAL REPRESENTATION SHOULD BE A JOB OF HTML...SYNTACTIC, SEMANTIC
+    2.STYLING SHOULD BE ALL DONE BY CSS.
+
+
+CSS: Cascading Style Sheets
+    is used to give all styles to our webpage....
+Syntax:
+
+    1. a selector,specifying the element(s) that should have rules applied
+    2. one or more declarations, which are key/value pairs surrounded by {...}braces...
+
+h1{
+  color:blue;
+}
+
+h1 is a selector here...
+{ color:blue} is the declaration or rule I want to apply to h1....
+
+Where to put CSS?
+    1. Inline styles - when you define style within the element... 
+    2. Internal Embedded styles - When we define styles in the <head> section of the document... 
+    3. External File(s): When we define style in an external file.. named with .css extension... and link it to the page.....
+    4. The browser itself (Yes, browser also applies stylings...)
+
+January 26,2023
+
+CSS Selectors:
+    1. Tag selector - When we use the tag name to select an element..
+    2. ID selector - When we give style to a particular element with the given id..We use # to define style for the id...
+    3. Class selector - When we define a class of style. We can apply this to multiple elements....We define the class of style by using "." .. like .demo{ } and we can call this demo class anywhere in any element by using <h1 class="demo">..</h1>
+    4. Contextual Selectors - the position of elements in the DOM, the context selector indicates teh context of placement/nesting .. i.e; determined by the parent node..
+    5. Grouping Selectors- when we group multiple selectors for same style.
+    Example Code:
+    h1{
+  color:blue;
+}
+.demo{
+  color:red;
+  background-color:green;
+}
+#p1{
+  color:white;
+}
+
+HTML:
+<h1>Heading</h1>
+<p class="demo" id="p1"> This is text</p>
+<h1 class="demo">Heading next</h1>
+<h1>Point 1 here..</h1>
+<h3 class="demo">THis is another heading</h3>
+
+<div>
+  <h1>Hello from Div</h1>
+  <p>This is inside div</p>
+</div>
+<h1>Outside of Div</h1>
+<p>Outside of div</p>
+
+div h1{
+  color:red;
+}
+
+
+<nav>
+  <a href="#">Link1 </a> <br>
+  <a href="#">Link2 </a> <br>
+  <a href="#">Link3 </a>
+ </nav>
+     <a href="#">Link4</a>
+
+     a{
+  text-decoration:none;
+}
+
+
+
+<h1>Hello</h1>
+<h2>Hi</h2>
+<p>Text here</p>
+<nav>Some links</nav>
+<main>hello main</main>
+<h3>Heading3</h3>
+
+nav,main,section{
+  color:red;
+}
+
+
+Containers for Styling:
+    1.<div>..</div>
+    2. <span>... </span>
+
+
+CSS Units:
+
+16px = 12pt = 1em = 100%
+
+em (the width of the capital letter M):A scalable unit that is used in web media and is equal to the current font-size. If the font-size on the page is 16px.. then 1em means 16px...and if the font size is changed for the page, the em adjusts accordingly.. 
+
+pt - In our next session :)

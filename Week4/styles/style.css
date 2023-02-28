@@ -1,0 +1,34 @@
+html,
+body {
+  font-size: 20px;
+}
+
+/* h1 {
+  color: rgb(1, 246, 13);
+  background-color: rgb(73, 101, 101);
+}
+
+p {
+  color: red;
+  background-color: rgb(140, 231, 231);
+} */
+
+.info-box {
+  border: 1px solid green;
+  border-radius: 5px;
+}
+
+.info-box p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1em;
+}
+
+.info-box span {
+  font-weight: bold;
+}
+
+.info-box img {
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+}

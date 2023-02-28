@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week3</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+  </head>
+  <body>
+    <h1 id="top">Topics in HTML</h1>
+    <a href="./pages/about.html">About me</a> |
+    <a href="./pages/contact.html">Contact me</a> |
+    <a href="./pages/january18.html">January 18 notes</a>|
+    <a href="./pages/cats.html">Cats Page</a>
+    <br />
+
+    <a href="#md">Media</a> | <a href="#lk">Links in HTML</a> |
+    <a href="#qt">Quotations</a>
+    <h2>Address</h2>
+    <address>
+      106 Topsail Rd. NL, <br />
+      NL1 234
+    </address>
+
+    <h2>Date and Time</h2>
+    <time>2023-01-16</time> <br />
+    <time datetime="2023-01-15">Yesterday</time> <br />
+    <time datetime="2023-01-17">Tomorrow</time>
+
+    <h2>Abbreviations</h2>
+    <abbr title="Hypertext Marup Language">HTML</abbr>
+    <abbr title="Cascading Style Sheets">CSS</abbr>
+
+    <h2>Code</h2>
+    <code
+      >print("hello") <br />
+      2+2</code
+    >
+
+    <h2>Super and Sub-heading</h2>
+    H<sub>2</sub>O <br />
+    X<sup>3</sup>
+
+    <h2 id="qt">Quotations</h2>
+    This is a <q>Quote by someone</q>
+    <blockquote>This is a blockquote from someone</blockquote>
+
+    <h2>Text</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ad,
+      provident ducimus et nostrum maiores necessitatibus reiciendis modi at
+      sint, molestias vero, mollitia adipisci distinctio alias vel possimus
+      sequi dolore!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem explicabo
+      tenetur distinctio aperiam laborum deleniti optio reiciendis officia
+      aliquam sapiente dolorum delectus atque facilis earum vitae eum, placeat
+      incidunt porro!
+    </p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam officia
+    rerum perferendis temporibus maxime, ab animi, minus recusandae, quisquam
+    facere sed. Laudantium rerum inventore ullam perferendis reiciendis debitis
+    et laborum?
+
+    <h2 id="md">Media</h2>
+    <a href="#top">[Top]</a>
+    <h3>Images</h3>
+    To bring images on web page we use &lt;img /&gt; element. <br />
+
+    <!-- We can have images in our folder and access that .. RELATIVE PATH -->
+    <img src="./images/pic1.jpg" alt="My picture" width="300" />
+    <br />
+    <img src="./images/pic2.jpg" alt="" width="300" />
+
+    <br />
+    <!-- We can bring images from ABSOULTE PATH.. -->
+
+    <img
+      src="https://images.unsplash.com/photo-1566647387313-9fda80664848?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"
+      alt="some picture"
+      width="300"
+    />
+
+    <h3>Videos</h3>
+    To bring videos on our page we use &lt;video&gt; element. <br />
+    <video src="./videos/video1.mp4" controls width="300"></video>
+    <br />
+    A video from youtube <br />
+
+    <iframe
+      width="300"
+      height="315"
+      src="https://www.youtube.com/embed/55t41cj6KII"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+
+    <h3>Audio</h3>
+    Leave it to you guys... :)
+
+    <h2 id="lk">Links in HTML</h2>
+    <a href="#top">[Top]</a>
+    To make links in HTML we use Anchor tag. &lt;a&gt;
+    <br />
+    Links can be of two types:
+    <ol>
+      <li>External Links - Absolute links</li>
+      <li>Internal Links - Within the website</li>
+    </ol>
+    <h3>External Links</h3>
+    <a href="https://www.google.com">Google</a> <br />
+    <a href="https://www.twitter.com">Twitter</a>
+    <br />
+    <h3>Internal Links</h3>
+    <a href="./pages/about.html">About me</a> <br />
+    <a href="./pages/contact.html">Contact me</a>
+
+    <ul>
+      <li>Link to a page of the website</li>
+      <li>Link to the fragment on the same page</li>
+    </ul>
+  </body>
+</html>

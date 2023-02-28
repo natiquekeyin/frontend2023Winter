@@ -1,0 +1,57 @@
+CSS Grid: After Sprint! 
+
+DOM: Document Object Model
+    API (Application Programming Interface)-something that allows two applications to talk to each other...
+    That enables communication between HTML,CSS AND Javascript!
+
+How DOM works:
+    When we load an HTML document, the browser makes a DOM Tree of it..
+    The element are called "Nodes"
+    The text is called "text nodes"...
+
+DOM has few steps:
+    1. Finding the reference of the element that we want to work on...
+        i)document.getElementById("");  .// we put id in quotations... 
+        ii) document.querySelector(selector)
+            a) id selector ( always use # with id)
+            b) class selector (always use . with class name to access)
+            c) tag selector ( provide the tag name as selector)
+        iii) document.querySelectorAll(selector)
+            it will return the arrray of all nodes referfenced by the selector.
+    2. Making changes or reading contents of elements in the tree contents...
+        i) .innerText.. (normal text the tags elements will also appear BUT NOT RENDERED...)
+        ii) .innerHTML...(the real HTML inside the element will come out.. and rendered when it is set....)
+
+    3. Creating, adding and removing elemetns in the DOM Tree...
+        i) document.createElement("img"); ... ti will create a new img element, now we need to append it .. so we can append it anywhere in the body by accessing that partcular area....
+    4. Run code in response to the events triggered by the user, browser, or other parts of the code...
+        Events: it might include 
+            i)user actions( like clicking a button, moving the mouse ,pressing a key , changing tabs etc etc...)
+            ii)browser initiated actions (timers, messages from background process , reports from sensors etc...)
+    
+    We attach events with different elements and run function against any events triggered by those elemtns....
+        addEventListener(eventname,function);
+
+
+
+let myDiv = document.querySelector("#part1");
+
+myDiv.addEventListener("dblclick", function () {
+  let newPic = document.createElement("img");
+  newPic.src = "./images/car.jpeg";
+  newPic.alt = "Unsplah picture";
+  newPic.width = "300";
+  newPic.id = "myCar";
+  myDiv.appendChild(newPic);
+
+  document.querySelector("#para1").innerText = "Did you like my old car???";
+});
+
+
+NOTES FOR BOOK LIBRARY PROJECT:
+
+//console.log(myForm); //always console.log..your every step, so that you are always confirmed that things going in right direction...
+
+
+
+ //   row.innerHTML = "<td>" + t + "</td><td>" + a + "</td><td>" + i + "</td>";

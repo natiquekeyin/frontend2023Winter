@@ -1,0 +1,57 @@
+h1 {
+  width: 300px;
+  height: 100px;
+  background-color: aquamarine;
+  border: 1px solid red;
+  padding: 10px;
+  /* padding: TOP/LEFT/BOTTOM/RIGHT */
+  /* padding-left: 10px;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 25px; */
+
+  /* padding: TOP RIGHT BOTTOM LEFT */
+  /* padding: 5px 10px 15px 20px; */
+
+  /* padding: TOP/BOTTOM RIGHT/LEFT */
+  /* padding: 5px 10px; */
+
+  margin-bottom: 0;
+}
+
+p {
+  background-color: beige;
+  /* border-top: 10px solid green;
+  border-right: 10px solid green;
+  border-bottom: 10px solid red; */
+  border: 1px solid green;
+  padding: 10px;
+  margin-top: 20px;
+  width: 300px;
+}
+
+main {
+  border: 1px solid blue;
+  background-color: teal;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+#one {
+  border: 1px solid black;
+  padding: 5px;
+  flex: 2;
+}
+
+#two {
+  border: 1px solid black;
+  padding: 5px;
+  flex: 1;
+}
+
+#three {
+  border: 1px solid black;
+  padding: 5px;
+  flex: 1;
+}

@@ -1,0 +1,17 @@
+The tech name for browser is "user agent"
+CSS Box Model:
+    Every element in HTML is considered as a BOX in CSS...
+    Box model that takes care of everything for that box like positioning etc for each box...
+
+Content - The content of the box, where text and images appear
+Padding - Clears an area around the content. The padding is transparent
+Border - A border that goes around the padding and content
+Margin - Clears an area outside the border. The margin is transparent
+
+
+Flexbox model:
+The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
+
+For reading assignment purposes:
+https://flexboxfroggy.com/
+Play this game!!!!

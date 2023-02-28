@@ -1,0 +1,9 @@
+Tags,
+Elements,
+Entities,
+
+Attributes:The extra properties of an element are called attributes.
+
+<h1>Any heading</h1>
+<h1 id="h1">Hello</h1>
+<h1 id="note">some heading</h1>
