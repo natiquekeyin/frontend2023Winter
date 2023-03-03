@@ -1,4 +1,4 @@
-CSS Grid: After Sprint! 
+CSS Grid: After Sprint! Discuss
 
 DOM: Document Object Model
     API (Application Programming Interface)-something that allows two applications to talk to each other...
