@@ -1,1 +1,12 @@
-DOM Programming Continuation!
+WEEK10- DOM Programming Continuation!
+
+We started DOM in Week7, now continuing and learning some new skills related to it! See Week7 folder's feb14.html and feb16.html for reference. 
+
+Let's start something from previous parts and improve it here!
+    1. Make a function to change url by considering an array of links
+    2. Now let's use event to take out more information, and try to update in real time the information on our web page. 
+    3. Bring all the links from the js file containing array and make unordered list and add all the values here in bullets.
+    4. Use debug keyword to know what is going on actually in code.
+    5. Use setTimeout() & setInterval() functions for some browser events.
+
+API: Application Programming Interface!
