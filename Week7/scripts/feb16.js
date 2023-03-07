@@ -40,7 +40,12 @@ function showAlert(m, c) {
   let popup = document.createElement("p");
   popup.innerText = m;
   popup.className = c;
+  popup.id = "box";
   document.querySelector("#book-list").appendChild(popup);
+
+  setTimeout(function () {
+    document.querySelector("#box").remove();
+  }, 3000);
 }
 
 // We will start from here... first we will work on showAlert()... and then we will continute with this project... i) like deleting the book from the list ii) displaying a color popup[done this but will repeat...]... iii) permanently storing the books in browser memory iv) Apply core object orirented programming to this project.. (classes and objects...)
