@@ -10,3 +10,170 @@ Let's start something from previous parts and improve it here!
     5. Use setTimeout() & setInterval() functions for some browser events.
 
 API: Application Programming Interface!
+---------------------------------------------------------------------
+Objects in JavaScript:
+
+A JavaScript Object is a data structure that uses a map, also referred to as an associative array or dictionary. It consists of a set of key-value pairs that are used to represent and organize data
+
+We call an Object’s key/value pairs properties.
+
+Similar to creating instances of Arrays or RegExp, we can also use literals to create Objects. The syntax for creating an Object literal is to begin with the opening brace { and end with the closing brace }.
+
+In between these curly braces we can optionally include a list of any properties (comma separated) we want to attach to this Object instance.
+
+These properties are written using a standard key: value style, with the property’s name String coming first, followed by a :, then its value. 
+
+The value can be any JavaScript value, including functions or other Objects.
+
+// an empty Object, with no properties
+var o = {};                       
+
+// a `person` Object, with one property, `name`
+var person = { name: 'Alan Smith' };  
+
+// a `campus` Object, with `name` as well as co-ordinates (`lat`, `lng`)
+var campus = {
+    name: 'KeyinStJohn's',
+    lat: 43.7714,
+    lng: -79.4988
+};
+
+// a `menu` Object, which contains lists of menu items per meal
+var menu = {
+    breakfast: ['eggs', 'toast', 'banana', 'coffee'],
+    lunch: ['salad', 'chicken', 'apple', 'milk'],
+    dinner: ['salmon', 'rice', 'green beans']
+};
+
+
+Object property names are Strings, and we can refer to them either via the dot operator .name, or using the bracket operator ['name'] (similar to indexing in an Array):
+
+var person = { name: 'Alan Smith' };
+
+ get the value of the `name` property using the . operator
+console.log(person.name);
+
+get the value of the `name` property using the [] operator
+console.log(person['name']);
+
+Position of Keyin College on map!
+ 43.6532; -79.3545;
+
+var lat = 43.6532;
+var lng = -79.6532;
+
+var keyin = [43.6532, -79.3545];
+console.log(keyin[0]);
+
+var keyin = [43.6532, -79.3545];
+var keyin = {
+ lat: 43.6532,
+  lng: -79.3545,
+ };
+
+ console.log(keyin.lng);
+let points = [
+   [43.6532, -79.3883],
+  [42.6532, -29.3883],
+  [41.6532, -49.3883],
+  [40.6532, -69.3883],
+  [48.6532, -89.3883],
+  [49.6532, -90.3883],
+ ];
+
+ console.log(points[4][1]);
+
+var points = [
+  { lat: 43.5333, lng: -29.5433 },
+  { lat: 41.5333, lng: -39.5433 },
+  { lat: 42.5333, lng: -89.5433 },
+  { lat: 45.5333, lng: -90.5433 },
+ { lat: 48.5333, lng: -79.5433 },
+ ];
+ console.log(points[2].lng);
+
+ var user = {
+   firstName: "First",
+  lastName: "Last",
+  email: "first@gmail.com",
+   loggedIn: false,
+ };
+function login(user) {
+  user.loggedIn = true;
+ }
+ login(user);
+ console.log(user);
+
+login(user);
+console.log(user);
+
+Constructor Functions
+
+In some cases, we may need to create multiple Objects with the same structure. For instance, if we are developing an application that defines several users, it's essential for all user Objects to have a uniform structure to enable seamless communication within the program and functions. To achieve this, we can write a factory function that builds our user Objects based on some data. This function is referred to as a Constructor since it constructs Objects with the same set of properties and methods.
+
+// Define a Constructor function, `User`
+function User(id, name) {
+    // Attach the id to an Object referenced by `this`
+    this.id = id;
+    // Attach the name to an Object referenced by `this`
+    this.name = name;
+}
+
+// Create a new instance of a User (Object)
+var user1 = new User(1, 'Sam Smith');
+// Create another new instance of a User (Object)
+var user2 = new User(2, 'Joan Winston');
+
+It's worth noting that the User function, unlike the previous ones we've defined, starts with a capital letter 'U.' We adopt this naming convention to signify that the User function is a special constructor function. To use a constructor function, we need to add the new keyword before it. When we invoke the constructor function using new User(...), we are essentially instructing it to create a new Object and pass it through the function so that it can add different properties and methods to it.
+
+A constructor can also add methods to an object via this:
+
+// Define a Constructor function, `User`
+function User(id, name) {
+    this.id = id;
+    this.name = name;
+
+    // Add a toString method
+    this.toString = function () {
+        return this.name + ' (#' + this.id + ')';
+    };
+}
+
+// Create a new instance of a User (Object)
+var user1 = new User(1, 'Sam Smith');
+console.log(user1.toString()); // 'Sam Smith (#1)
+
+
+In the code above, we’re creating a new function every time we create a new User. As we start to create lots of users, we’ll also be creating lots of duplicate functions. This will cause our program to use more and more resources (memory), which can lead to issues as the program scales.
+
+Object Prototypes:
+
+Ideally, we would like to differentiate between the unique aspects of a User Object, such as their id and name, while still allowing the shared aspects, such as the methods, like toString, to be accessible across all User Objects. Fortunately, JavaScript offers us a way to achieve this through an Object's prototype.
+
+In JavaScript, Objects are inherently linked to a prototype, which is an Object that the Object's .prototype property refers to. When accessing an Object's property during runtime, JavaScript initially searches for that property within the Object itself. If it's not found, the search proceeds to the prototype Object, and the same process is repeated. This process continues until the end of the prototype chain is reached at the Object Object.
+
+Let’s rewrite our User so that the toString method is moved from each user instance to the prototype of all user instances:
+
+// Define a Constructor function, `User`
+function User(id, name) {
+    this.id = id;
+    this.name = name;
+}
+
+User.prototype.toString = function () {
+    return this.name + ' (#' + this.id + ')';
+};
+
+
+This code looks very similar to what we originally wrote. Notice that we’ve moved toString out of the User function, and instead attached it to User.prototype. By doing so, we’ll only ever need a single copy of this function: every new User() instance we create will also include a reference to a prototype object, which contains our function. When we use user1.toString(), JavaScript will do something like this:
+
+does user1 have a property called toString? No, we didn’t add one in the constructor.
+does user1.prototype have a property called toString? Yes, use that.
+What if we’d written user1.something()?
+
+does user1 have a property called something? No, we didn’t add one in the constructor.
+does user1.prototype have a property called something? No.
+does user1.prototype.prototype (i.e., Object) have a property called something? No.
+there are no more objects in the prototype chain, throw an error
+user1.something();
+// TypeError: user1.something is not a function
