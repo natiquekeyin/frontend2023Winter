@@ -159,7 +159,7 @@ R C
 // console.log(user2);
 // user2.prefs = { color: "Red", mode: "Audi" };
 // console.log(user2);
-
+// constructor function
 function User(f, l, e) {
   this.firstName = f;
   this.lastName = l;
