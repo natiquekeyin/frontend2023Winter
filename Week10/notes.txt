@@ -177,3 +177,16 @@ does user1.prototype.prototype (i.e., Object) have a property called something? 
 there are no more objects in the prototype chain, throw an error
 user1.something();
 // TypeError: user1.something is not a function
+
+
+Asynchronous JavaScript!
+
+    We need to do asynchronous programming ... 
+
+The getPosts() executes in 1 second and createPost is taking 3 seconds.. therefore by the time getPosts reads the array,,, the 3rd post is not added to the array....
+
+SOlutions:
+    1. Callbacks
+    2. Promises
+    3. Async/Await
+

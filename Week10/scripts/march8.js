@@ -160,31 +160,105 @@ R C
 // user2.prefs = { color: "Red", mode: "Audi" };
 // console.log(user2);
 // constructor function
-function User(f, l, e) {
-  this.firstName = f;
-  this.lastName = l;
-  this.email = e;
-  this.loggedIn = true;
-  this.hobbies = ["something", "social", "cycling"];
-}
+// function User(f, l, e) {
+//   this.firstName = f;
+//   this.lastName = l;
+//   this.email = e;
+//   this.loggedIn = true;
+//   this.hobbies = ["something", "social", "cycling"];
+// }
 
-User.prototype.anything = "hello";
-User.prototype.prefs = { color: "Yellow", mode: "Vovo" };
-User.prototype.logIn = function () {
-  this.loggedIn = true;
-};
+// User.prototype.anything = "hello";
+// User.prototype.prefs = { color: "Yellow", mode: "Vovo" };
+// User.prototype.logIn = function () {
+//   this.loggedIn = true;
+// };
 
-User.prototype.logOut = function () {
-  this.loggedIn = false;
-};
+// User.prototype.logOut = function () {
+//   this.loggedIn = false;
+// };
 
-var user1 = new User("Alan", "Smith", "alan@gmail.com");
-console.log(user1.prefs);
-console.log(user1.anything);
+// var user1 = new User("Alan", "Smith", "alan@gmail.com");
+// console.log(user1.prefs);
+// console.log(user1.anything);
 // user1.logOut();
 // console.log(user1);
 // var user2 = new User("Bob", "Smith", "bob@gmail.com");
 // var user1000 = new User("xxxtx", "xxttx", "xxxtt@gmail.com");
 // user1.logOut(); // its very less likely or occasional that we may call logout and login functions...
 
-// JavaScript defines something called "Prototype".. .Prototypal Inheritance.... where we define a prototype and store all commone features there.. and they are n ot copied with every object creation....
+// JavaScript defines something called "Prototype".. .Prototypal Inheritance.... where we define a prototype and store all common features there.. and they are not copied with every object creation....
+
+// March 9 lecture starts here....
+
+// let users = [{first...},{sfdsf},{sfsdfdss}];
+
+let users = [
+  {
+    firstName: "Alex",
+    lastName: "Smith",
+    email: "alex@gmail.com",
+    loggedIn: false,
+    hobbies: ["reading", "sports", "cycling"],
+    prefs: { color: "Red", mode: "Audi" },
+    logIn: function () {
+      this.loggedIn = true;
+    },
+    logOut: function () {
+      this.loggedIn = false;
+    },
+  },
+  {
+    firstName: "Bob",
+    lastName: "Anderson",
+    email: "bob@gmail.com",
+    loggedIn: true,
+    hobbies: ["sports", "cycling"],
+    prefs: { color: "Green", mode: "Volvo" },
+    logIn: function () {
+      this.loggedIn = true;
+    },
+    logOut: function () {
+      this.loggedIn = false;
+    },
+  },
+  {
+    firstName: "Christina",
+    lastName: "Lee",
+    email: "chris@gmail.com",
+    loggedIn: false,
+    hobbies: ["reading", "cycling"],
+    prefs: { color: "Pink", mode: "Hyndai" },
+    logIn: function () {
+      this.loggedIn = true;
+    },
+    logOut: function () {
+      this.loggedIn = false;
+    },
+  },
+]; //creating an array of user objects here
+
+// console.log(users[0]);
+// console.log(users[1]);
+// console.log(users[2]);
+
+users.forEach(function (user) {
+  // if (user.loggedIn === true) {
+  //   console.log(user.firstName);
+  // }
+  // if (user.firstName.toLowerCase().startsWith("a")) {
+  //   console.log(user.lastName);
+  // }
+  // if (user.prefs.color.toLowerCase() === "red") {
+  //   console.log(user.firstName + user.lastName);
+  //   console.log(user.prefs.color);
+  // }
+  // write code to show the first and last name of the users who have "reading" hobby...
+  // if (user.hobbies === "reading") {
+  //   console.log(user.firstName + user.lastName);
+  // }
+  // if (user.hobbies.includes("reading")) {
+  //   console.log(user.firstName + " " + user.lastName);
+  // }
+  console.log(user.firstName);
+});
