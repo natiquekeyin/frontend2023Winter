@@ -8,15 +8,17 @@ function createPost(post, callback) {
   setTimeout(function () {
     posts.push(post);
     callback(); //getPosts() will be called here..
-  }, 5000);
+  }, 3000);
 }
 
 // getPosts will read all the posts form array after 1 second and make a li element for each post and produce the output on page...
+
+// One solution is Callbacks.. as used here...
 function getPosts() {
   setTimeout(function () {
     let output = "";
     posts.forEach(function (post) {
-      output += `<li>${post.title}</li> <li>${post.author}</li>`;
+      output += `<li>${post.title}</li> <li>${post.author}</li>-------------`;
     });
     document.querySelector("#data").innerHTML = output;
   }, 1000);

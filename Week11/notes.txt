@@ -1,0 +1,27 @@
+AJAX and XHR Introduction:
+    Most Async code we work with will be a part of an API or library
+    
+    XMLHttpRequest & Fetch
+
+    There are few ways to work with Async Code:
+    i)Callbacks,
+    ii)Promises,
+    iii)Async/Await
+
+    Async requests should be done in the background and no page reload or refresh should happen when we are fetching the data...
+
+XMLHttpRequest Object:
+    API(Application programming interface - a way for a website to talk to other areas) in the form of an Object
+    Provided by the browsers JS environment
+    can work with data other than XML(JSON,plain text)
+
+    JSON data format: Standard format in which we receive data from different websites...
+    JavaScript Object Notation (JSON)
+
+    we always need to convert JSON to normal JavaScript to work with it
+
+    let user = {name:"Alan",age:20}; //remember this?
+    
+    IN JSON:
+    
+    let user = {"name":"Alan","age":20} // What is the difference between this and previous???
