@@ -81,3 +81,62 @@ function loadJSON() {
   };
   xhr.send();
 }
+
+let button3 = document.querySelector("#btn3");
+
+button3.addEventListener("click", loadJSONS);
+
+function loadJSONS() {
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", "./data/customers.json");
+  xhr.onload = function () {
+    if (this.status === 200) {
+      const customers = JSON.parse(this.responseText);
+      console.log(customers);
+      let output = "";
+      customers.forEach(function (customer) {
+        output += `<ul>
+        <li>ID: <strong> ${customer.id}</strong></li>
+        <li>Name: <strong> ${customer.name.toUpperCase()}</strong></li>
+        <li>Company:<strong> ${customer.company}</strong></li>
+        <li>Phone:<strong>${
+          customer.phone
+        }</strong></li></ul>-----------------------`;
+      });
+
+      document.querySelector("#output").innerHTML = output;
+    }
+  };
+  xhr.send();
+}
+
+// API calls and getting data from other websites....
+
+let button4 = document.querySelector("#btn4");
+
+button4.addEventListener("click", loadAPI);
+
+function loadAPI() {
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://reqres.in/api/users");
+  xhr.onload = function () {
+    if (this.status === 200) {
+      var response = JSON.parse(this.responseText);
+      let output = "";
+      response.data.forEach(function (user) {
+        if (user.first_name.startsWith("E")) {
+          output += `<div class ="profile">Welcome <strong>${user.first_name}</strong><br>
+        <img src = ${user.avatar} width="100" class="pic"/><br>
+        Email: ${user.email}<br></div>`;
+        }
+      });
+
+      document.querySelector("#output").innerHTML = output;
+    }
+  };
+
+  //   4. execute this xhr request..
+  xhr.send();
+}
+
+// practice for today.. user enters an id .. and only record with that id is displayed... on web pgae....
