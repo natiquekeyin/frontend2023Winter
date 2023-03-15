@@ -32,14 +32,26 @@ XMLHttpRequest Object:
     Promises:
 
 
-
-
-
-
-
-
-
-
-
+    Practice For today:
+    BY using this end point...
     
+    https://api.chucknorris.io/
+    
+    write a web page "Chuck Norris Joke Generator" that uses either XMLHttpRequest of Fetch API. to do the following:
+
+    i)Should display a random joke on start of the page...
+
+
+    ii) Ask user for a category and display 5 jokes of that category only.
+
+    iii) Ask user how many random jokes they want and display that many jokes...
+
+
+
+
+
+
+
+
+
 
