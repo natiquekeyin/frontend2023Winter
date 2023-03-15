@@ -40,3 +40,78 @@ p.then(function (message) {
 // Fetch API uses the concept of promises very comprehensively...
 
 // Next session we will discuss Fetch API...
+
+// Fetch API: Most developers use fetch... api!
+// fetch returns a promise (resolved or rejectd...)
+
+// console.log(fetch("https://reqres.in/api/users"));
+
+let button1 = document.querySelector("#btn1");
+
+button1.addEventListener("click", loadFile);
+
+function loadFile() {
+  fetch("./data/test.txt")
+    .then((res) => {
+      return res.text(); //reads teh readable stream but still returns a promise..
+    })
+    .then((data) => {
+      document.querySelector(
+        "#output1"
+      ).innerHTML = `<strong>The error message is :${data}</strong>`;
+    })
+    .catch((err) => {
+      document.querySelector("#output1").innerHTML = `<strong>${err}</strong>`;
+    }); //to catch that promise we again need another then that will actually display the data...
+}
+
+let button2 = document.querySelector("#btn2");
+
+button2.addEventListener("click", loadCustomers);
+
+function loadCustomers() {
+  fetch("./data/customers.json")
+    .then((res) => {
+      return res.json(); //to read the json stream reader...
+    })
+    .then((data) => {
+      let output = "";
+      data.forEach((item) => {
+        output += `<li>Name: ${item.name}</li><li>Phone: ${item.phone}</li>----`;
+      });
+      document.querySelector("#output1").innerHTML = output;
+    })
+    .catch((err) => {
+      document.querySelector(
+        "#output1"
+      ).innerHTML = `<strong>The error: ${err}</strong>`;
+    }); //to catch that promise we again need another then that will actually display the data...
+}
+
+let button3 = document.querySelector("#btn3");
+
+button3.addEventListener("click", loadAPI);
+
+function loadAPI() {
+  fetch("https://api.github.com/users")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      let output = "";
+      data.forEach((user) => {
+        output += `<div class="profile"> Welcome ${user.login}! <br>
+        <h4>${user.login}</h4><img src=${user.avatar_url} width="100" alt="profile" class="pic"/> <br>
+        <a href="${user.html_url}">More info..</a>
+        </div>`;
+      });
+      document.querySelector("#output1").innerHTML = output;
+    })
+    .catch((err) => {
+      document.querySelector(
+        "#output1"
+      ).innerHTML = `<strong>API data nor recevied because: ${err}</strong>`;
+    });
+}
+
+// updated March 15
