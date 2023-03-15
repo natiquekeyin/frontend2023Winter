@@ -92,16 +92,14 @@ function loadJSONS() {
   xhr.onload = function () {
     if (this.status === 200) {
       const customers = JSON.parse(this.responseText);
-      console.log(customers);
+
       let output = "";
       customers.forEach(function (customer) {
         output += `<ul>
         <li>ID: <strong> ${customer.id}</strong></li>
-        <li>Name: <strong> ${customer.name.toUpperCase()}</strong></li>
+        <li>Name: <strong> ${customer.name}</strong></li>
         <li>Company:<strong> ${customer.company}</strong></li>
-        <li>Phone:<strong>${
-          customer.phone
-        }</strong></li></ul>-----------------------`;
+        <li>Phone:<strong>${customer.phone}</strong></li></ul>-----------------------`;
       });
 
       document.querySelector("#output").innerHTML = output;
@@ -118,17 +116,17 @@ button4.addEventListener("click", loadAPI);
 
 function loadAPI() {
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://reqres.in/api/users");
+  xhr.open("GET", "https://reqres.in/api/users"); //end points...
   xhr.onload = function () {
     if (this.status === 200) {
+      console.log(this.responseText);
       var response = JSON.parse(this.responseText);
+      console.log(response.data);
       let output = "";
       response.data.forEach(function (user) {
-        if (user.first_name.startsWith("E")) {
-          output += `<div class ="profile">Welcome <strong>${user.first_name}</strong><br>
+        output += `<div class ="profile">Welcome <strong>${user.first_name}</strong><br>
         <img src = ${user.avatar} width="100" class="pic"/><br>
         Email: ${user.email}<br></div>`;
-        }
       });
 
       document.querySelector("#output").innerHTML = output;

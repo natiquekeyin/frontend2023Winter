@@ -25,3 +25,21 @@ XMLHttpRequest Object:
     IN JSON:
     
     let user = {"name":"Alan","age":20} // What is the difference between this and previous???
+
+
+    Fetch API: Another API for making get requests to the other apis...
+    Promises are used in Fetch API:
+    Promises:
+
+
+
+
+
+
+
+
+
+
+
+    
+
