@@ -56,9 +56,7 @@ function loadFile() {
       return res.text(); //reads teh readable stream but still returns a promise..
     })
     .then((data) => {
-      document.querySelector(
-        "#output1"
-      ).innerHTML = `<strong>The error message is :${data}</strong>`;
+      document.querySelector("#output1").innerHTML = `<strong>${data}</strong>`;
     })
     .catch((err) => {
       document.querySelector("#output1").innerHTML = `<strong>${err}</strong>`;
@@ -115,3 +113,31 @@ function loadAPI() {
 }
 
 // updated March 15
+
+// March 16 starts here...
+// API 2...
+
+let button4 = document.querySelector("#btn4");
+
+button4.addEventListener("click", loadAPI2);
+
+function loadAPI2() {
+  fetch("https://jsonplaceholder.typicode.com/todos")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      let count = 0;
+      data.forEach((item) => {
+        if (item.id > 50) {
+          count++;
+          document.querySelector("#output1").innerHTML += item.title + "<br>";
+        }
+      });
+      document.querySelector("#output1").innerHTML +=
+        "there are " + count + "records";
+    })
+    .catch((err) => {
+      document.querySelector("#output1").innerHTML = "The error occured" + err;
+    });
+}
