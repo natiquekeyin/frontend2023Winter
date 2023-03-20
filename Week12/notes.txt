@@ -1,0 +1,40 @@
+Full stack developers?? Efficient in both front-end and back-end of applications!
+
+Front-end Technologies: HTML, CSS, JAVASCRIPT...
+
+MERN:MongoDB, Express JS, React, Node.js
+MEAN:MongoDB, Express JS, Angular, Node.js
+
+REACT!
+A JavaScript library for building User Interfaces
+[HTML, CSS, JavaScript]
+
+    Very intuitive way to develop highly responsive user interfaces....
+    It gives us divide and rule of application ...[separate concerns -- the application will have independent areas which we can easily debug or work on...]
+    It gives us the ability to develop "SPA" (Single page applications) -- SELLING POINT
+    (index.html, history.html,about.html,contact.html) in HTML...
+    In react we will ONLY HAVE on html page that will serve the complete applicaiton or all the pages....
+    How react acheives this? BY using "COMPONENTS"
+
+WHAT WE NEED TO RUN REACT APPLCATIONS:
+    1. VSC (YEs)
+    2. Node JS 
+    3. create React application..
+
+1. Components
+2. Props
+3. State Variables...
+
+
+1. Components:
+    A reusable dynamic area on the page that gets loaded automatically without refreshing the page....
+
+
+General Structure of React App:
+
+index.html is the page that runs - it has id = root div inside it...
+index.js access the id "root" renders a "COMPONENT" App by accessing the App.js component....
+App.js is the "MAIN" component that is running while react application runs....
+
+
+
