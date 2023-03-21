@@ -26,8 +26,7 @@ WHAT WE NEED TO RUN REACT APPLCATIONS:
 3. State Variables...
 
 
-1. Components:
-    A reusable dynamic area on the page that gets loaded automatically without refreshing the page....
+
 
 
 General Structure of React App:
@@ -37,4 +36,37 @@ index.js access the id "root" renders a "COMPONENT" App by accessing the App.js 
 App.js is the "MAIN" component that is running while react application runs....
 
 
+1. Components:
+    A reusable dynamic area on the page that gets loaded automatically without refreshing the page....
 
+    Two types:
+    i)Function Components
+    ii)Class Components
+
+    1.Function Components:
+    A fucntion component is just like a normal JS function ...but it returns JSX(JavaScript Extension )[JSX is a code mix of HTML,CSS and JavaScript]
+    Its name should start with a capital letter (ALWAYS)
+
+     <div className="App">
+      <h1>Welcome {name.toUpperCase()}!!!</h1>
+      <h1>My First React App</h1>
+      <p>This is my first application in React - React is Fun!</p>
+    </div>
+
+    Fragments JSX:
+    Fragments start with <> and ends with </>... and they wrap around all the compoenents but DONOT produce any code for themselves..
+
+
+      <h1>First Component!</h1>
+      <h2>Welcome {name}!</h2>
+      {loading ? (
+        <h4>Loading....</h4>
+      ) : (
+        <h2>You are welcome {name.toUpperCase()}</h2>
+      )}
+
+
+March 22:
+
+How to create our own Components?
+Props: properties...
