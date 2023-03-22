@@ -54,7 +54,7 @@ App.js is the "MAIN" component that is running while react application runs....
     </div>
 
     Fragments JSX:
-    Fragments start with <> and ends with </>... and they wrap around all the compoenents but DONOT produce any code for themselves..
+    Fragments start with <> and ends with </>... and they wrap around all the JSX but DONOT produce any code for themselves..
 
 
       <h1>First Component!</h1>
@@ -69,4 +69,15 @@ App.js is the "MAIN" component that is running while react application runs....
 March 22:
 
 How to create our own Components?
-Props: properties...
+We create the component and then import it wherever we want it to execute...and execute it by calling like an element <Header/>
+
+Props: properties...Very important!
+
+<p>This is header component</p>
+      {props.message ? (
+        <p>
+          The punch line is: <blockquote>{props.message}</blockquote>
+        </p>
+      ) : (
+        <p>No Punch Line</p>
+      )}
