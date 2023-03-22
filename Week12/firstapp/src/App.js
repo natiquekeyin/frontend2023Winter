@@ -8,8 +8,6 @@ function App() {
     <div className="App">
       <h1>First React App</h1>
       <Header title="ABC" message="This is the best company" />
-      <Header title="To do" message="You have many todos pending" />
-      <Footer />
     </div>
   );
 }

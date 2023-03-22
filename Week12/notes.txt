@@ -81,3 +81,7 @@ Props: properties...Very important!
       ) : (
         <p>No Punch Line</p>
       )}
+
+
+      <h2 style={headingStyle}>Header - {props.title}</h2>
+      <p style={headingStyle}>Message - {props.message}</p>
