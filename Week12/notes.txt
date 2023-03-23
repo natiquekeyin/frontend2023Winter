@@ -85,3 +85,45 @@ Props: properties...Very important!
 
       <h2 style={headingStyle}>Header - {props.title}</h2>
       <p style={headingStyle}>Message - {props.message}</p>
+
+
+const tasks = [
+  {
+    id: 1,
+    text: "Doctor's Appointment",
+    day: "April 7th at 1:30pm",
+    reminder: true,
+  },
+  {
+    id: 2,
+    text: "Shopping",
+    day: "April 17th at 11:30am",
+    reminder: false,
+  },
+  {
+    id: 3,
+    text: "Meeting with boss",
+    day: "March 28th  at 1:30pm",
+    reminder: true,
+  },
+];
+
+
+ const [num, setNum] = useState(0);
+  const [name, setName] = useState("Alan");
+
+<p>You clicked {num} times</p>
+      <button onClick={() => setNum(num + 1)}>Click</button>
+    
+    Hooks in React:
+
+    The data stored in components represent the "STATE" in which they are in...
+
+    In react's function components, we use hooks to define the state/variables for the component...
+
+    hooks mantain the state of a function component in react...
+
+    1. useState() hook!
+      useState(parameter) defines and returns variable and sets up the initial value to the parameter passed...
+
+      also returns a function that can be used to manipulate the created variable...

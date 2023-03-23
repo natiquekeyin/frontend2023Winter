@@ -6,7 +6,7 @@ const Header = (props) => {
     console.log("clicked the button");
   };
   return (
-    <div className="container">
+    <div>
       <header className="header">
         <h2>{props.title}</h2>
         <Button color="green" text="Add" someFun={onClick} />
