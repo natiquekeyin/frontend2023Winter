@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const Tasks = () => {
-  const [tasks, setTasks] = useState([
+  let someTasks = [
     {
       id: 1,
       text: "Doctor's Appointment",
@@ -20,7 +20,8 @@ const Tasks = () => {
       day: "March 28th  at 1:30pm",
       reminder: true,
     },
-  ]);
+  ];
+  const [tasks, setTasks] = useState(someTasks);
   //  num=20; it is a state ...
   return (
     <>

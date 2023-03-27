@@ -127,3 +127,13 @@ const tasks = [
       useState(parameter) defines and returns variable and sets up the initial value to the parameter passed...
 
       also returns a function that can be used to manipulate the created variable...
+
+      WHENEVER STATE VARIABLE CHANGES...THE COMPONENT GETS RE-RENDERED...
+
+      Temp: 
+      {/* <Header title="ABC" message="This is the best company" />
+      <Tasks /> */}
+
+
+      <h2>{name}</h2>
+      <button onClick={changeState}>Change</button>
