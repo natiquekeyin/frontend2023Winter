@@ -25,9 +25,9 @@ const Tasks = () => {
   //  num=20; it is a state ...
   return (
     <>
-      {tasks.map((task) => (
+      {/* {tasks.map((task) => (
         <h3 key={task.id}>{task.text}</h3>
-      ))}
+      ))} */}
     </>
   );
 };
