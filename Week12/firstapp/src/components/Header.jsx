@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import Button from "./Button";
+import { FaApple } from "react-icons/fa";
 
 const Header = (props) => {
   const onClick = () => {
@@ -8,7 +9,11 @@ const Header = (props) => {
   return (
     <div>
       <header className="header">
-        <h2>{props.title}</h2>
+        <h2>
+          {" "}
+          <FaApple style={{ color: "red", cursor: "pointer" }} />
+          {props.title}
+        </h2>
         <Button color="green" text="Add" someFun={onClick} />
       </header>
     </div>
