@@ -46,3 +46,19 @@ body {
 .btn:active {
   transform: scale(0.98);
 }
+
+.task {
+  background-color: rgb(164, 241, 241);
+  padding: 10px 20px;
+  margin: 5px;
+}
+
+.task h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task.reminder {
+  border-left: 5px solid green;
+}

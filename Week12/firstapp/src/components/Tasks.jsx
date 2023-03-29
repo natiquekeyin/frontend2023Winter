@@ -1,11 +1,11 @@
 import Task from "./Task";
 
-const Tasks = ({ tasks, onDelete }) => {
+const Tasks = ({ tasks, onDelete, onToggle }) => {
   //  num=20; it is a state ...
   return (
     <>
       {tasks.map((task) => (
-        <Task task={task} onDelete={onDelete} />
+        <Task task={task} onDelete={onDelete} onToggle={onToggle} />
       ))}
     </>
   );
