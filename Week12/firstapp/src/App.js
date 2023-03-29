@@ -30,6 +30,8 @@ function App() {
   ];
   const [tasks, setTasks] = useState(someTasks);
 
+  const [showAddTask, setShowAddTask] = useState(false);
+
   // to Delete the task from ui
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id));
@@ -45,10 +47,23 @@ function App() {
     );
   };
 
+  // Now Add task function here
+  const addTask = (task) => {
+    const id = Math.floor(Math.random() * 10000) + 1;
+
+    const newTask = { id, ...task };
+
+    setTasks([...tasks, newTask]);
+  };
+
+  const changeTask = () => {
+    // console.log("changeTask");
+    setShowAddTask(!showAddTask);
+  };
   return (
     <div className="container">
-      <Header title="To do" />
-      <AddTask />
+      <Header title="To do" onAdd={changeTask} showAdd={showAddTask} />
+      {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
       ) : (

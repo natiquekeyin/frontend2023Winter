@@ -2,19 +2,20 @@ import PropTypes from "prop-types";
 import Button from "./Button";
 import { FaApple } from "react-icons/fa";
 
-const Header = (props) => {
-  const onClick = () => {
-    console.log("clicked the button");
-  };
+const Header = ({ title, onAdd, showAdd }) => {
   return (
     <div>
       <header className="header">
         <h2>
           {" "}
           <FaApple style={{ color: "red", cursor: "pointer" }} />
-          {props.title}
+          {title}
         </h2>
-        <Button color="green" text="Add" someFun={onClick} />
+        <Button
+          color={showAdd ? "red" : "green"}
+          text={showAdd ? "Close" : "Add"}
+          onClick={onAdd}
+        />
       </header>
     </div>
   );
