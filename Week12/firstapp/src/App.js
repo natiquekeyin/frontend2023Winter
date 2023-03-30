@@ -4,31 +4,26 @@ import Footer from "./components/Footer";
 import Tasks from "./components/Tasks";
 import USComponent from "./components/USComponent";
 import USComponentArray from "./components/USComponentArray";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AddTask from "./components/AddTask";
 // Observer it starts with a capital letter...
 function App() {
-  let someTasks = [
-    {
-      id: 1,
-      text: "Doctor's Appointment",
-      day: "April 7th at 1:30pm",
-      reminder: true,
-    },
-    {
-      id: 2,
-      text: "Shopping",
-      day: "April 17th at 11:30am",
-      reminder: false,
-    },
-    {
-      id: 3,
-      text: "Meeting with boss",
-      day: "March 28th  at 1:30pm",
-      reminder: true,
-    },
-  ];
-  const [tasks, setTasks] = useState(someTasks);
+  useEffect(() => {
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks();
+      setTasks(tasksFromServer);
+    };
+    getTasks();
+  }, []);
+
+  const fetchTasks = async () => {
+    const res = await fetch("http://localhost:8000/tasks");
+    const data = await res.json();
+
+    return data;
+  };
+
+  const [tasks, setTasks] = useState([]);
 
   const [showAddTask, setShowAddTask] = useState(false);
 
@@ -76,3 +71,28 @@ function App() {
 export default App;
 
 // React developer tools ...
+
+// JSON server! we will  use it...
+// npm run build (to make a build folder for publishing)
+// sudo npm i -g server ... (to serve this build locally on our own server)
+// sudo serve -s build -p 8000 ... NOW localhost:/8000 has become our production server
+// in package.json add "server": "json-server --watch db.json --port 8000" in scripts..
+// npm run server
+
+// Hooks: useState():
+// useEffect() runs with every rendering
+// but if we give [] as the second parameter it will only RUN ONCE when application gets loaded...
+/* 
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const res = await fetch("http://localhost:8000/tasks");
+
+      const data = await res.json();
+
+      console.log(data);
+    };
+
+    fetchTasks();
+  }, []);
+
+*/

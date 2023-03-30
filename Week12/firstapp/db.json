@@ -1,0 +1,41 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Doctor's Appointment",
+      "day": "April 7, 2023 at 1:30pm",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "text": "Shopping",
+      "day": "April 17, 2023 at 12:30pm",
+      "reminder": false
+    },
+    {
+      "id": 3,
+      "text": "Meeting with Boss",
+      "day": "March 7, 2023 at 1:30pm",
+      "reminder": true
+    },
+    {
+      "id": 4,
+      "text": "Helog",
+      "day": "April 17, 2023 at 12:30pm",
+      "reminder": false
+    },
+    {
+      "id": 5,
+      "text": "Meeting with Boss",
+      "day": "March 7, 2023 at 1:30pm",
+      "reminder": true
+    },
+
+    {
+      "id": 6,
+      "text": "Shopping",
+      "day": "April 17, 2023 at 12:30pm",
+      "reminder": false
+    }
+  ]
+}
