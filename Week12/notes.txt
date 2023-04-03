@@ -139,3 +139,49 @@ const tasks = [
       <button onClick={changeState}>Change</button>
 
       March 29
+
+
+      // React developer tools ...
+
+// JSON server! we will  use it...
+// npm run build (to make a build folder for publishing)
+// sudo npm i -g server ... (to serve this build locally on our own server)
+// sudo serve -s build -p 8000 ... NOW localhost:/8000 has become our production server
+// in package.json add "server": "json-server --watch db.json --port 8000" in scripts..
+// npm run server
+
+// Hooks: useState():
+// useEffect() runs with every rendering
+// but if we give [] as the second parameter it will only RUN ONCE when application gets loaded...
+/* 
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const res = await fetch("http://localhost:8000/tasks");
+
+      const data = await res.json();
+
+      console.log(data);
+    };
+
+    fetchTasks();
+  }, []);
+
+*/
+
+
+April 3, 2023...
+
+REST API:
+
+1. GET... is to read or get data from an end point 
+2. POST.. to post new data on server...
+Go and post my json data on server...
+
+3. PUT... to update the data on server...
+Update some data on server..
+
+4. DELETE... to delete the data from server...
+
+JSON.parse() converts JSON data into normal javascript objects to read their properties...
+
+JSON.stringify( ) converts normal javascript into "JSON" objects.. that are transported to the server...
