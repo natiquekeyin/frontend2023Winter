@@ -185,3 +185,23 @@ Update some data on server..
 JSON.parse() converts JSON data into normal javascript objects to read their properties...
 
 JSON.stringify( ) converts normal javascript into "JSON" objects.. that are transported to the server...
+
+
+Routing in React:
+
+"/" ... it is called home route... 
+"/about"... it means there must be a route which shows any new component..
+
+
+// <div className="container">
+          {/* <Header title="To do" onAdd={changeTask} showAdd={showAddTask} />
+          {showAddTask && <AddTask onAdd={addTask} />}
+          {tasks.length > 0 ? (
+            <Tasks
+              tasks={tasks}
+              onDelete={deleteTask}
+              onToggle={toggleReminder}
+            />
+          ) : (
+            "No tasks "
+          )} */

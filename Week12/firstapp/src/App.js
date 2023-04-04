@@ -6,6 +6,8 @@ import USComponent from "./components/USComponent";
 import USComponentArray from "./components/USComponentArray";
 import { useState, useEffect } from "react";
 import AddTask from "./components/AddTask";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import About from "./components/About";
 // Observer it starts with a capital letter...
 function App() {
   useEffect(() => {
@@ -32,7 +34,7 @@ function App() {
 
   const [tasks, setTasks] = useState([]);
 
-  const [showAddTask, setShowAddTask] = useState(false);
+  const [showAddTask, setShowAddTask] = useState(true);
 
   // to Delete the task from ui
   const deleteTask = async (id) => {
@@ -91,15 +93,30 @@ function App() {
     setShowAddTask(!showAddTask);
   };
   return (
-    <div className="container">
-      <Header title="To do" onAdd={changeTask} showAdd={showAddTask} />
-      {showAddTask && <AddTask onAdd={addTask} />}
-      {tasks.length > 0 ? (
-        <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
-      ) : (
-        "No tasks "
-      )}
-    </div>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              {showAddTask && <AddTask onAdd={addTask} />}
+              {tasks.length > 0 ? (
+                <Tasks
+                  tasks={tasks}
+                  onDelete={deleteTask}
+                  onToggle={toggleReminder}
+                />
+              ) : (
+                "No Tasks"
+              )}
+            </>
+          }
+        />
+        <Route path="/about" element={<About />} />
+
+        <Route path="/array" element={<USComponentArray />} />
+      </Routes>
+    </Router>
   );
 }
 
