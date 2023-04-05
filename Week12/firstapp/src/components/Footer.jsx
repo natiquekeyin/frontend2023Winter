@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div>
       <p>Copyright &copy;2023 - Keyin College</p>
-      <a href="/about">About Us!</a>
+      <Link to="/about">About Us!</Link>
     </div>
   );
 };

@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
 import Button from "./Button";
 import { FaApple } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
 const Header = ({ title, onAdd, showAdd }) => {
+  const location = useLocation();
   return (
     <div>
       <header className="header">
@@ -11,11 +13,13 @@ const Header = ({ title, onAdd, showAdd }) => {
           <FaApple style={{ color: "red", cursor: "pointer" }} />
           {title}
         </h2>
-        <Button
-          color={showAdd ? "red" : "green"}
-          text={showAdd ? "Close" : "Add"}
-          onClick={onAdd}
-        />
+        {location.pathname === "/" && (
+          <Button
+            color={showAdd ? "red" : "green"}
+            text={showAdd ? "Close" : "Add"}
+            onClick={onAdd}
+          />
+        )}
       </header>
     </div>
   );

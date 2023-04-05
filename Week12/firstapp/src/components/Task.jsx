@@ -1,6 +1,7 @@
 import { FaBeer } from "react-icons/fa";
 import { BiAlarm } from "react-icons/bi";
 import { FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Task = ({ task, onDelete, onToggle }) => {
   return (
@@ -20,6 +21,9 @@ const Task = ({ task, onDelete, onToggle }) => {
         <BiAlarm style={{ color: "green", cursor: "pointer" }} />
         {task.day}
       </h5>
+      <p>
+        <Link to={`/task/${task.id}`}>View Details</Link>
+      </p>
     </div>
   );
 };

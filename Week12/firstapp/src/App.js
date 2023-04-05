@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import AddTask from "./components/AddTask";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./components/About";
+import TaskDetails from "./components/TaskDetails";
 // Observer it starts with a capital letter...
 function App() {
   useEffect(() => {
@@ -34,7 +35,7 @@ function App() {
 
   const [tasks, setTasks] = useState([]);
 
-  const [showAddTask, setShowAddTask] = useState(true);
+  const [showAddTask, setShowAddTask] = useState(false);
 
   // to Delete the task from ui
   const deleteTask = async (id) => {
@@ -94,28 +95,35 @@ function App() {
   };
   return (
     <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              {showAddTask && <AddTask onAdd={addTask} />}
-              {tasks.length > 0 ? (
-                <Tasks
-                  tasks={tasks}
-                  onDelete={deleteTask}
-                  onToggle={toggleReminder}
-                />
-              ) : (
-                "No Tasks"
-              )}
-            </>
-          }
-        />
-        <Route path="/about" element={<About />} />
+      <div className="container">
+        <Header title="To do" onAdd={changeTask} showAdd={showAddTask} />
 
-        <Route path="/array" element={<USComponentArray />} />
-      </Routes>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                {showAddTask && <AddTask onAdd={addTask} />}
+                {tasks.length > 0 ? (
+                  <Tasks
+                    tasks={tasks}
+                    onDelete={deleteTask}
+                    onToggle={toggleReminder}
+                  />
+                ) : (
+                  "No Tasks"
+                )}
+              </>
+            }
+          />
+
+          <Route path="/about" element={<About />} />
+
+          <Route path="/task/:id" element={<TaskDetails />} />
+        </Routes>
+
+        <Footer />
+      </div>
     </Router>
   );
 }
