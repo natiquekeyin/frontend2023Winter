@@ -2,13 +2,13 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Tasks from "./components/Tasks";
-import USComponent from "./components/USComponent";
-import USComponentArray from "./components/USComponentArray";
+
 import { useState, useEffect } from "react";
 import AddTask from "./components/AddTask";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./components/About";
 import TaskDetails from "./components/TaskDetails";
+
 // Observer it starts with a capital letter...
 function App() {
   useEffect(() => {

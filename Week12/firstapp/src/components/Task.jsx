@@ -19,7 +19,11 @@ const Task = ({ task, onDelete, onToggle }) => {
       <h5>
         {" "}
         <BiAlarm style={{ color: "green", cursor: "pointer" }} />
-        {task.day}
+        <img
+          src={task.day}
+          alt=""
+          style={{ width: 100, height: 100, borderRadius: "50%" }}
+        />
       </h5>
       <p>
         <Link to={`/task/${task.id}`}>View Details</Link>

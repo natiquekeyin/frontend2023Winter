@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import { Navigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const TaskDetails = () => {
   const [task, setTask] = useState({});
@@ -10,6 +11,7 @@ const TaskDetails = () => {
 
   const params = useParams();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const fetchTask = async () => {
@@ -36,8 +38,11 @@ const TaskDetails = () => {
     <h3>Loading....</h3>
   ) : (
     <div>
+      <p>
+        <em>Currently, you are at {pathname}</em>
+      </p>
       <h3>{task.text}</h3>
-      <p>{task.day}</p>
+      <img src={task.day} width="200" alt="" /> <br />
       <Button
         text="Go Back"
         onClick={() => {
