@@ -205,3 +205,8 @@ Routing in React:
           ) : (
             "No tasks "
           )} */
+
+
+The button "ADD" should not be visible on any other path than HOME...
+
+When we want to read the values from URL ... we use a special react-router-dom hook which is called "useParams"
