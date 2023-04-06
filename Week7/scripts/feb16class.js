@@ -110,3 +110,4 @@ class Store {
 }
 
 document.addEventListener("DOMContentLoaded", Store.displayBooks);
+// end of the doc
