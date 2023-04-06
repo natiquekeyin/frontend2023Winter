@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./components/About";
 import TaskDetails from "./components/TaskDetails";
 
-// Observer it starts with a capital letter...
+// Observe capital letter
 function App() {
   useEffect(() => {
     const getTasks = async () => {
@@ -69,7 +69,7 @@ function App() {
     );
   };
 
-  // Now Add task function here
+  // Now Add task function
   const addTask = async (task) => {
     const res = await fetch("http://localhost:8000/tasks", {
       method: "POST",
